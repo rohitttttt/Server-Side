@@ -1,0 +1,27 @@
+{
+  "name": "s2s",
+  "version": "1.0.0",
+  "description": "study to shine website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "study",
+    "to",
+    "shine",
+    "study",
+    "online"
+  ],
+  "author": "Gaurav Gupta",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.4.18",
+    "node-cache": "^4.2.0",
+    "jsonwebtoken": "^8.3.0"
+  }
+}
