@@ -7,6 +7,9 @@ module.exports = function(app) {
     .get(video.all)
     //.get(menus.sample)
     .post(video.createVideo);
+ 
+  app.route('/videos/home')
+  .get(video.homePageVideos);
 
   app.route('/videos/:id')
    .get(video.getVideosByRole);

@@ -14,6 +14,17 @@ exports.all = function(req, res) {
   });
 };
 
+//get all home page videos
+exports.homePageVideos = function(req, res) {
+  var query = {forHomePage: true};
+  Videos.find(query, function(err, videos) {
+    if (err)
+      res.send(err);
+      console.log("Videos Response: "+ videos);
+    res.json(videos);
+  });
+};
+
 //get all videos filtered on role
 exports.getVideosByRole = function(req,res){
     const roleId = Number(req.params.id);
