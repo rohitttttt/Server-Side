@@ -9,7 +9,7 @@ exports.all = function(req, res) {
   Videos.find({}, function(err, videos) {
     if (err)
       res.send(err);
-      console.log("Videos Response: "+ videos);
+      console.log("Videos by roles response: "+ videos);
     res.json(videos);
   });
 };
@@ -20,7 +20,7 @@ exports.homePageVideos = function(req, res) {
   Videos.find(query, function(err, videos) {
     if (err)
       res.send(err);
-      console.log("Videos Response: "+ videos);
+      console.log("Videos response: "+ videos);
     res.json(videos);
   });
 };
@@ -28,16 +28,16 @@ exports.homePageVideos = function(req, res) {
 //get all videos filtered on role
 exports.getVideosByRole = function(req,res){
     const roleId = Number(req.params.id);
-  videos.find({},function(err,videos){
+    console.log("roleId is : "+ roleId);
+    var query = {roles : roleId.toString()};
+  Videos.find(query,function(err,videos){
    if(err)
     res.send(err);
+    console.log("No. of videos found : "+ videos.length);
     console.log("Videos by Role response: "+ videos)
+    res.json(videos);
   });
 };
-
-// exports.sample = function(req,res){
-//     res.send("test");
-// };
 
 exports.createVideo = function(req, res) {
     var newVideo = new Videos(req.body);
