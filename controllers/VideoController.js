@@ -8,9 +8,9 @@ var mongoose = require('mongoose'),
 exports.all = function(req, res) {
   Videos.find({}, function(err, videos) {
     if (err)
-      res.send(err);
-      console.log("Videos by roles response: "+ videos);
-    res.json(videos);
+      res.send({status:"1", message: err, data:null});
+      //console.log("Videos by roles response: "+ videos);
+    res.json({status:"0", message: "success", data:{videos}});
   });
 };
 
@@ -19,23 +19,23 @@ exports.homePageVideos = function(req, res) {
   var query = {forHomePage: true};
   Videos.find(query, function(err, videos) {
     if (err)
-      res.send(err);
-      console.log("Videos response: "+ videos);
-    res.json(videos);
+      res.send({status:"1", message: err, data:null});
+      //console.log("Videos response: "+ videos);
+    res.json({status:"0", message: "success", data:{videos}});
   });
 };
 
 //get all videos filtered on role
 exports.getVideosByRole = function(req,res){
     const roleId = Number(req.params.id);
-    console.log("roleId is : "+ roleId);
+    //console.log("roleId is : "+ roleId);
     var query = {roles : roleId.toString()};
   Videos.find(query,function(err,videos){
    if(err)
-    res.send(err);
-    console.log("No. of videos found : "+ videos.length);
-    console.log("Videos by Role response: "+ videos)
-    res.json(videos);
+    res.send({status:"1", message: err, data:null});
+   // console.log("No. of videos found : "+ videos.length);
+    //console.log("Videos by Role response: "+ videos)
+    res.json({status:"0", message: "success", data:{videos}});
   });
 };
 

@@ -7,9 +7,9 @@ var mongoose = require('mongoose'),
 exports.all = function(req, res) {
   Menus.find({}, function(err, menus) {
     if (err)
-      res.send(err);
-      console.log("Menus Response: "+ menus);
-    res.json(menus);
+      res.send({status:"1", message: err, data:null});
+     // console.log("Menus Response: "+ menus);
+    res.json({status:"0", message: "success", data:{menus}});
   });
 };
 

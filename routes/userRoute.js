@@ -5,6 +5,8 @@ module.exports = function(app) {
   
     // Routes
     app.route('/user/login')
-      .post(user.authenticate)
+      .post(user.authenticate);
       //.post(menu.createMenu);
+    app.route('/user/register')
+     .post(user.create);
   };
