@@ -10,6 +10,18 @@ module.exports = {
  create: function(req, res, next) {
     if(req.body.email ==="" || req.body.password === "")
              res.json({status:"1",message:"Mandatory fields required!!!"});
+      //check if user already exists
+      Users.findOne({email:req.body.email}, function(err,userInfo){
+          if(err){
+              next(err);
+          }
+          else{
+              if(userInfo != null || userInfo != undefined)
+              {
+                res.json({status:"1",message:"User exists!!!"});
+              }
+          }
+      });
       let hashPass = bcrypt.hashSync(req.body.password, 10); //hash password
       Users.create({ email: req.body.email, password: hashPass, mobile : req.body.mobile, 
                          firstName : req.body.firstName, lastName : req.body.lastName, gender : req.body.gender,
