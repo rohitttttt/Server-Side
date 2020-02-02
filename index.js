@@ -19,14 +19,14 @@ var express = require('express'),
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb'); // Rohit Need to Change After some time
-//mongoose.connect('mongodb://localhost/s2s_db');  //Gaurav
+//mongoose.connect('mongodb://localhost/Tododb'); // Rohit Need to Change After some time
+mongoose.connect('mongodb://localhost/s2s_db');  //Gaurav
 
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   if ('OPTIONS' == req.method) {
     res.sendStatus(200);
     } else {
@@ -38,6 +38,7 @@ app.all('/*', function(req, res, next) {
 
 
 app.set('secretKey', 'nodeRestApi'); // jwt secret token
+app.set('saltRounds',12);            // no of rounds for hashing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
