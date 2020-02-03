@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const saltRounds = 12;
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -62,9 +62,14 @@ const UserSchema = new Schema({
     required: true
  }
 });
-// hash user password before saving into database
-// UserSchema.pre('save', function(next){
-// this.password = bcrypt.hashSync(this.password, saltRounds);
-// next();
-// });
+
+//hash user password before saving into database
+UserSchema.pre('save', function(next){
+if(!this.isModified("password"))
+   return next();
+this.password = bcrypt.hashSync(this.password, saltRounds);
+if(this.password != undefined || !this.parentPassword == null)
+    this.parentPassword = bcrypt.hashSync(this.parentPassword,saltRounds);
+next();
+});
 module.exports = mongoose.model('Users', UserSchema);
