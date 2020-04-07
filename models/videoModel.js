@@ -11,6 +11,18 @@ var VideoSchema = new Schema({
   description: {
     type: String,
     required:'Kindly enter descrption of the menu'
+  },
+  url:{
+    type: String
+  },
+  roles:{
+    type: Array
+  },
+  categories : {
+    type: Array
+  },
+  forHomePage:{
+    type: Boolean
   }
 });
 

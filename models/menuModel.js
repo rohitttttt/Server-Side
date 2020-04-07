@@ -11,6 +11,12 @@ var MenuSchema = new Schema({
   menuPath: {
     type: String,
     required:'Kindly enter the path of the menu'
+  },
+  roles:{
+    type: Array
+  },
+  forHomePage:{
+    type: Boolean
   }
 });
 

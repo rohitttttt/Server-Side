@@ -43,8 +43,21 @@ exports.createVideo = function(req, res) {
     var newVideo = new Videos(req.body);
     newVideo.save(function(err, video) {
       if (err)
-        res.send(err);
-      res.json(video);
+      res.send({status:"1", message: err, data:null});
+      res.json({status:"0", message: "success", data:{video}});
+    });
+  };
+
+  exports.updateVideo = function(req,res){
+    let id = req.body._id;
+    if(id == null || id == "")
+    res.send({status:"1", message: "Not Exists!", data:null});
+    var query = {_id : id};
+    var newQuery = {$set:{ title: req.body.title, description: req.body.description, url: req.body.url, forHomePage:req.body.forHomePage,roles:req.body.roles,categories:req.body.categories}};
+    Videos.updateOne(query,newQuery,function(err, updateResponse){
+     if(err)
+     res.send({status:"1", message: err, data:null});
+     res.json({status:"0", message: "success", data: null});
     });
   };
 

@@ -1,0 +1,568 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Study to Shine API",
+        "description": "Study to Shine API documentation"
+    },
+    "schemes": [
+        "http"
+    ],
+    "host": "localhost:3001",
+    "basePath": "/",
+    "paths": {
+        "/roles": {
+            "get": {
+                "summary": "Gets all roles",
+                "description": "Returns a list containing all active roles.",
+                "responses": {
+                    "200": {
+                        "description": "A list of Roles",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "_id":{
+                                        "type":"string"
+                                    },
+                                    "roleId":{
+                                        "type": "number"
+                                    },
+                                    "roleName": {
+                                        "type": "string",
+                                        "required":"true"
+                                    },
+                                    "isActive": {
+                                        "type": "boolean"
+                                    }                                   
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/menus":{
+           "get":{
+            "summary": "Gets all Menus",
+            "description": "Returns a list containing all menus.",
+            "responses": {
+                "200": {
+                    "description": "A list of Menus",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "roles":{
+                                    "type":"array",
+                                    "items":{
+                                      "type":"string"
+                                    }
+                                },
+                                "_id":{
+                                    "type":"string"
+                                },
+                                "menuItemText":{
+                                    "type": "string"
+                                },
+                                "menuPath": {
+                                    "type": "string"
+                                },                               
+                                "forHomePage": {
+                                    "type": "boolean"
+                                }                                   
+                            }
+                        }
+                    }
+                }
+            }
+           },
+           "post":{
+            "summary": "Create a new Menu",
+            "description": "Returns a newly created menu.",
+            "responses": {
+                "200": {
+                    "description": "Create a new Menus",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "roles":{
+                                    "type":"array",
+                                    "items":{
+                                      "type":"string"
+                                    }
+                                },
+                                "_id":{
+                                    "type":"string"
+                                },
+                                "menuItemText":{
+                                    "type": "string"
+                                },
+                                "menuPath": {
+                                    "type": "string"
+                                },                                
+                                "forHomePage": {
+                                    "type": "boolean"
+                                }                                   
+                            }
+                        }
+                    }
+                }
+            }
+           } 
+        },
+        "/levels":{
+            "get":{
+                "summary": "Gets all levels",
+                "description": "Returns a list containing all levels.",
+                "responses": {
+                    "200": {
+                        "description": "A list of Levels",
+                        "schema": {
+                            "type":"object",
+                            "properties":{
+                                "status":{
+                                    "type":"string"
+                                },
+                                "message":{
+                                    "type":"string"
+                                },
+                                "data":{
+                                    "type":"object",
+                                    "properties":{
+                                        "levels":{
+                                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "_id":{
+                                        "type":"string"
+                                    },
+                                    "Primary":{
+                                        "type": "string"
+                                    },
+                                    "Uppar Primary":{
+                                        "type": "string"
+                                    },
+                                    "Senior Secondary":{
+                                        "type": "string"
+                                    },
+                                    "Parenting":{
+                                        "type": "string"
+                                    },
+                                    "Teaching":{
+                                        "type": "string"
+                                    },
+                                    "isApproved": {
+                                        "type": "boolean",
+                                        "required":"true",
+                                         "default": "false"
+                                    },
+                                    "isActive": {
+                                        "type": "boolean",
+                                        "default": "false"
+                                    },
+                                    "created_by": {
+                                        "type": "string",
+                                        "required":"true"
+                                    }, 
+                                    "updated_by": {
+                                        "type": "string"
+                                    },
+                                    "updated_date": {
+                                        "type": "date"
+                                    }  
+                                }
+                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories":{
+            "get":{
+                "summary": "Gets all categories",
+                "description": "Returns a list containing all categories.",
+                "responses": {
+                    "200": {
+                        "description": "A list of categories",
+                        "schema": {
+                            "type":"object",
+                            "properties":{
+                               "status":{
+                                  "type":"string" 
+                               },
+                               "message":{
+                                   "type":"string"
+                               },
+                               "data":{
+                                  "type":"object",
+                                  "properties":{
+                                      "categories":{
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "_id":{
+                                                    "type":"string"
+                                                },
+                                                "theme": {
+                                                    "type": "string",
+                                                    "required": "Kindly enter theme"
+                                                  },
+                                                  "level": {
+                                                    "type": "string",
+                                                    "required":"Kindly enter level"
+                                                  },
+                                                  "category": {
+                                                    "type": "string",
+                                                    "required":"Kindly enter category"
+                                                  },
+                                                "isApproved": {
+                                                    "type": "boolean",
+                                                    "required":"true",
+                                                     "default": "false"
+                                                },
+                                                "isActive": {
+                                                    "type": "boolean",
+                                                    "default": "false"
+                                                },
+                                                "created_by": {
+                                                    "type": "string",
+                                                    "required":"true"
+                                                }, 
+                                                "updated_by": {
+                                                    "type": "string"
+                                                },
+                                                "updated_date": {
+                                                    "type": "date"
+                                                }  
+                                            }
+                                        }
+                                      }
+                                  } 
+                               } 
+                            }                           
+                        }
+                    }
+                }
+            }
+        },
+        "/categories/{id}":{
+            "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "description": "id of category to find.",
+                  "type": "string"
+                }
+              ],
+            "get":{
+                "summary": "Gets category for id",
+                "description": "Returns a specified category.",
+                "responses": {
+                    "200": {
+                        "description": "A category with specific id.",
+                        "schema": {
+                            "type":"object",
+                             "properties":{
+                                 "status":{
+                                     "type":"string"
+                                 },
+                                 "message":{
+                                     "type":"string"
+                                 },
+                                 "data":{
+                                     "type":"object",
+                                     "properties":{
+                                         "categories" :{
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "_id":{
+                                                        "type":"string"
+                                                    },
+                                                    "theme": {
+                                                        "type": "string",
+                                                        "required": "Kindly enter theme"
+                                                      },
+                                                      "level": {
+                                                        "type": "string",
+                                                        "required":"Kindly enter level"
+                                                      },
+                                                      "category": {
+                                                        "type": "string",
+                                                        "required":"Kindly enter category"
+                                                      },
+                                                    "isApproved": {
+                                                        "type": "boolean",
+                                                        "required":"true",
+                                                         "default": "false"
+                                                    },
+                                                    "isActive": {
+                                                        "type": "boolean",
+                                                        "default": "false"
+                                                    },
+                                                    "created_by": {
+                                                        "type": "string",
+                                                        "required":"true"
+                                                    }, 
+                                                    "updated_by": {
+                                                        "type": "string"
+                                                    },
+                                                    "updated_date": {
+                                                        "type": "date"
+                                                    }  
+                                                }
+                                            }
+                                         }
+                                     }
+                                 }
+                             }                            
+                        }
+                    }
+                }
+            }
+        },
+        "/categories/create":{
+            "post":{
+                "summary": "Creates a new category",
+                "description": "Returns a newly created category.",
+                "parameters": [
+                    {
+                      "in": "body",
+                      "name": "body",
+                      "description": "Category object that needs to be added to the collection",
+                      "required": false,
+                      "schema": {
+                        "$ref": "#/models/categoryModel"
+                      }
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "creates a new category.",
+                        "schema": {
+                            "type": "object",
+                                "properties": {
+                                    "status":{
+                                       "type":"string" 
+                                    },
+                                    "message":{
+                                        "type":"string"
+                                    },
+                                    "data":{
+                                        "type":"object",
+                                         "properties": {
+                                            "category" :{
+                                               "type":"object",
+                                               "properties" :{
+                                                "_id":{
+                                                    "type":"string"
+                                                },
+                                                "theme": {
+                                                    "type": "string",
+                                                    "required": "Kindly enter theme"
+                                                  },
+                                                  "level": {
+                                                    "type": "string",
+                                                    "required":"Kindly enter level"
+                                                  },
+                                                  "category": {
+                                                    "type": "string",
+                                                    "required":"Kindly enter category"
+                                                  },
+                                                "isApproved": {
+                                                    "type": "boolean",
+                                                    "required":"true",
+                                                     "default": "false"
+                                                },
+                                                "isActive": {
+                                                    "type": "boolean",
+                                                    "default": "false"
+                                                },
+                                                "created_by": {
+                                                    "type": "string",
+                                                    "required":"true"
+                                                }, 
+                                                "updated_by": {
+                                                    "type": "string"
+                                                },
+                                                "updated_date": {
+                                                    "type": "date"
+                                                }  
+                                            }
+                                            } 
+                                         }                                        
+                                    } 
+                                }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories/update":{
+            "post":{
+                "summary": "Updates an existing category",
+                "description": "Returns a updated category.",
+                "parameters": [
+                    {
+                      "in": "body",
+                      "name": "body",
+                      "description": "Category object that needs to be modified to the collection",
+                      "required": false,
+                      "schema": {
+                        "$ref": ""
+                      }
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "updates a category.",
+                        "schema": {
+                            "type": "object",
+                                "properties": {
+                                    "status":{
+                                        "type":"string"
+                                    },
+                                    "message": {
+                                        "type": "string"                                       
+                                      },
+                                      "data": {
+                                        "type": null                                       
+                                      }                                      
+                                }
+                        }
+                    }
+                }
+            } 
+        },
+        "/topics":{
+            "get":{
+                "summary": "Gets all topics",
+                "description": "Returns a list containing all topics.",
+                "responses": {
+                    "200": {
+                        "description": "A list of topics",
+                        "schema": {
+                            "type":"object",
+                             "properties":{
+                                 "status":{
+                                        "type":"string"
+                                    },
+                                    "message": {
+                                        "type": "string"                                       
+                                      },
+                                      "data": {
+                                          "type":"object",
+                                           "properties" :{
+                                            "topics" :{
+                                                "type": "array",
+                                                "items": {
+                                                    "properties": {
+                                                        "_id":{
+                                                            "type":"string"
+                                                        },
+                                                        "theme": {
+                                                            "type": "string",
+                                                            "required": "Kindly enter theme"
+                                                          },
+                                                          "level": {
+                                                            "type": "string",
+                                                            "required":"Kindly enter level"
+                                                          },
+                                                          "category": {
+                                                            "type": "string",
+                                                            "required":"Kindly enter category"
+                                                          },
+                                                          "title": {
+                                                            "type": "string",
+                                                            "required":"Kindly enter title"
+                                                          },
+                                                          "by":{
+                                                            "type":"string"
+                                                          },
+                                                          "keyword":{
+                                                            "type":"string"
+                                                          },
+                                                          "intropara":{
+                                                            "type":"string"
+                                                          },
+                                                          "discpara":{
+                                                            "type":"string"
+                                                          },
+                                                          "concpara":{
+                                                            "type":"string"
+                                                          },
+                                                          "videourl":{
+                                                            "type":"string"
+                                                          },
+                                                          "mustread":{
+                                                            "type":"string"
+                                                          },
+                                                          "references":{
+                                                            "type":"string"
+                                                          },
+                                                          "question":{
+                                                            "type":"array",
+                                                            "items": {
+                                                                "properties": {
+                                                                    "q1": {
+                                                                        "type":"string"
+                                                                    },
+                                                                    "ch1": {
+                                                                        "type":"string"
+                                                                    },
+                                                                    "ch2":{
+                                                                        "type":"string"
+                                                                    },
+                                                                    "ch3": {
+                                                                        "type":"string"
+                                                                    },
+                                                                    "ch4": {
+                                                                        "type":"string"
+                                                                    },
+                                                                    "ans": {
+                                                                        "type":"string"
+                                                                    }
+                                                                }
+                                                            }
+                                                          },
+                                                        "isApproved": {
+                                                            "type": "boolean",
+                                                            "required":"true",
+                                                             "default": "false"
+                                                        },
+                                                        "isActive": {
+                                                            "type": "boolean",
+                                                            "default": "false"
+                                                        },
+                                                        "created_by": {
+                                                            "type": "string",
+                                                            "required":"true"
+                                                        }, 
+                                                        "updated_by": {
+                                                            "type": "string"
+                                                        },
+                                                        "updated_date": {
+                                                            "type": "date"
+                                                        }  
+                                                    }
+                                                }
+                                              }
+                                           }
+                                         
+                                      } 
+                             }
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
