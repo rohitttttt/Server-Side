@@ -78,22 +78,25 @@ exports.createCategory = function(req, res) {
       Categories.find(query, function(err, categories) {
         if(err)
           res.send({status:"1", message: err, data:null});
-        if(categories!= null)
+        if(categories!= null) {
           res.send({status:"1", message: "Category already exists!", data:null});
-      });
-      upload(req,res,function(err){
-          if(err)
-          res.send({status:"1", message: err, data:null});
-          var newCategory = new Categories(req.body);
-          newCategory.categoryImage=req.file.buffer;
-          newCategory.save(function(err, category) {
-            if (err)
+        }
+        else{
+          upload(req,res,function(err){
+            if(err)
             res.send({status:"1", message: err, data:null});
-            category.categoryImageBase64 = Buffer.from(category.categoryImage, 'binary').toString('base64');
-            category.categoryImage = null;
-            res.json({status:"0", message: "success", data:{category}});
+            var newCategory = new Categories(req.body);
+            newCategory.categoryImage=req.file.buffer;
+            newCategory.save(function(err, category) {
+              if (err)
+              res.send({status:"1", message: err, data:null});
+              category.categoryImageBase64 = Buffer.from(category.categoryImage, 'binary').toString('base64');
+              category.categoryImage = null;
+              res.json({status:"0", message: "success", data:{category}});
+            });
           });
-        });
+        }
+      });
     }
     catch(e){
       console.log(e);
