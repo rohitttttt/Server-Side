@@ -16,6 +16,16 @@ var CategorySchema = new Schema({
     type: String,
     required:'Kindly enter category'
   },
+  categoryImage: {
+    type:Buffer
+  },
+  categoryImageBase64:{
+    type: String,
+    required: false,
+  },
+  description: {
+    type: String
+  },
   isApproved:{
     type: Boolean,
     required:'Kindly enter isApproved',

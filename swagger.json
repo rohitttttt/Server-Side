@@ -221,6 +221,13 @@
                                                     "type": "string",
                                                     "required":"Kindly enter category"
                                                   },
+                                                  "categoryImage": {
+                                                    "type":null
+                                                  },
+                                                  "categoryImageBase64":{
+                                                    "type": "string",
+                                                    "required": "false"
+                                                  },
                                                 "isApproved": {
                                                     "type": "boolean",
                                                     "required":"true",
@@ -297,6 +304,13 @@
                                                       "category": {
                                                         "type": "string",
                                                         "required":"Kindly enter category"
+                                                      },
+                                                      "categoryImage": {
+                                                        "type":null
+                                                      },
+                                                      "categoryImageBase64":{
+                                                        "type": "string",
+                                                        "required": "false"
                                                       },
                                                     "isApproved": {
                                                         "type": "boolean",
@@ -375,6 +389,13 @@
                                                   "category": {
                                                     "type": "string",
                                                     "required":"Kindly enter category"
+                                                  },
+                                                  "categoryImage": {
+                                                    "type":null
+                                                  },
+                                                  "categoryImageBase64":{
+                                                    "type": "string",
+                                                    "required": "false"
                                                   },
                                                 "isApproved": {
                                                     "type": "boolean",
