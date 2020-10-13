@@ -78,7 +78,7 @@ exports.createCategory = function(req, res) {
       Categories.find(query, function(err, categories) {
         if(err)
           res.send({status:"1", message: err, data:null});
-        if(categories!= null) {
+        if(categories.length > 0) {
           res.send({status:"1", message: "Category already exists!", data:null});
         }
         else{
