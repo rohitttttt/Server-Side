@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5e8a243b283bd82868fa49e3"
+  },
+  "Primary": "Pre school,I,II",
+  "Uppar Primary": "III,IV,V",
+  "Secondary": "VI,VII,VII",
+  "Senior Secondary": "IX,X,XI,XII",
+  "Parenting": "",
+  "Teaching": "",
+  "isActive": true,
+  "isApproved": true,
+  "created_by": "gaurav",
+  "updated_by": "",
+  "updated_date": {
+    "$date": "2020-04-01T18:30:00Z"
+  }
+},{
+  "_id": {
+    "$oid": "5f66583b7e6881a7a38d814b"
+  }
+}]

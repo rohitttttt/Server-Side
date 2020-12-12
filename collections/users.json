@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "5e38571c0e90223c7824363d"
+  },
+  "email": "gaurav9@gmail.com",
+  "password": "$2b$12$bWc1b9Zo4DYoyF96G6KU9eqO4JNW37dKhLvsQLZf4b/oilOQBPKqG",
+  "mobile": "9810141835",
+  "firstName": "gaurav",
+  "lastName": "gupta",
+  "gender": 1,
+  "signupRole": 1,
+  "existingUser": false,
+  "parentUsername": "gaurav4@gmail.com",
+  "parentPassword": "$2b$12$6bNAJ9VbWsKMKkcT5w0pZO6HMDekCUWXTYUXO60FTBMrmsU5f9ovq",
+  "level": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5e38591b0e90223c7824363e"
+  },
+  "email": "gaurav10@gmail.com",
+  "password": "$2b$12$F74d3bTr6UU01YHJ3kuusOprd8GNtNkat96gYItP9GL8QNOXf9mt6",
+  "mobile": "9810141835",
+  "firstName": "gaurav",
+  "lastName": "gupta",
+  "gender": 1,
+  "signupRole": 1,
+  "existingUser": false,
+  "parentUsername": "gaurav4@gmail.com",
+  "parentPassword": "$2b$12$7nHCJOCRJEDqqbmlwCYvEOuWWVouw8UDipKIX1e6Z9LilAKcGrDzS",
+  "level": 1,
+  "__v": 0
+}]

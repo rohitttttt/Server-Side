@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "5df10f0c18fe5e29e09e50da"
+  },
+  "menuItemText": "Home",
+  "menuPath": "home.html",
+  "roles": [
+    "1",
+    "2",
+    "3"
+  ],
+  "forHomePage": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5df122e2764e87378cc3aa07"
+  },
+  "menuItemText": "I Learn",
+  "menuPath": "test.html",
+  "roles": [
+    "1",
+    "2",
+    "3"
+  ],
+  "forHomePage": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5e3fffc58722953ed8a04bf7"
+  },
+  "roles": [
+    "1",
+    "2",
+    "3"
+  ],
+  "menuItemText": "Home1",
+  "menuPath": "home1.html",
+  "forHomePage": true,
+  "__v": 0
+}]

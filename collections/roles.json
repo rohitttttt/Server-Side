@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5debbf1c7886e42c3cdb2076"
+  },
+  "roleId": 1,
+  "roleName": "student",
+  "isActive": true
+},{
+  "_id": {
+    "$oid": "5debbf7a7886e42c3cdb2077"
+  },
+  "roleId": 2,
+  "roleName": "teacher",
+  "isActive": true
+},{
+  "_id": {
+    "$oid": "5debbf977886e42c3cdb2078"
+  },
+  "roleId": "3",
+  "roleName": "parents",
+  "isActive": true
+}]

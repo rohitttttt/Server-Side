@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "5fa8237ea208e43760f4837a"
+  },
+  "isActive": false,
+  "firstName": "gaurav1",
+  "lastName": "gupta",
+  "roleId": 2,
+  "email": "gaurav1@gmail.com",
+  "username": "gaurav1",
+  "password": "$2b$12$glFQVbPiBFQcS1RyQeax6e5ctxEYz0nEttjF4MP2A1iOCa.jvy..y",
+  "mobile": "9810141835",
+  "created_by": "gaurav",
+  "updated_by": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fa83663d4613224d4f098c1"
+  },
+  "isActive": false,
+  "firstName": "gaurav",
+  "lastName": "gupta",
+  "roleId": 2,
+  "email": "gaurav@gmail.com",
+  "username": "gaurav",
+  "password": "gaurav@12",
+  "mobile": "9810141836",
+  "created_by": "gaurav",
+  "updated_by": "",
+  "__v": 0
+}]
