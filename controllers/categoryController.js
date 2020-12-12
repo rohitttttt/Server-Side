@@ -46,38 +46,36 @@ exports.all = function (req, res) {
   };
 
   Categories.find(query, function (err, categories) {
-    if (err)
-      res.send({
-        status: "1",
-        message: err,
-        data: null
+    try{
+      if (err)
+        res.send({ status: "1", message: err, data: null });
+      console.log("category: "+ categories);
+      //set for all collection before response
+      categories.forEach(function (item, i, arr) {
+        item.categoryImageBase64 = Buffer.from(item.categoryImage, 'binary').toString('base64');
+        item.categoryImage = null;
       });
-    //console.log("Roles Response: "+ roles);
-    //set for all collection before response
-    categories.forEach(function (item, i, arr) {
-      item.categoryImageBase64 = Buffer.from(item.categoryImage, 'binary').toString('base64');
-      item.categoryImage = null;
-    });
-    res.json({
-      status: "0",
-      message: "success",
-      data: {
-        categories
-      }
-    });
+      console.log("category: "+ categories);
+      res.json({ status: "0", message: "success", data: { categories }});
+    }
+    catch(e) {
+      sendErrorResponse(e,res);
+    }
   });
 };
+
+const sendErrorResponse = function(req,res){
+  console.error(req);
+  res.send({ status: "1", message: "Please try again later!", data: null });
+}
 
 //get category for id
 exports.getCategoryById = function (req, res) {
   const id = req.params.id.toString();
-  var query = {
-    _id: id
-  };
+  var query = { _id: id };
   Categories.findOne(query, function (err, categories) {
     if (err)
-      res.send({
-        status: "1",
+      res.send({ status: "1",
         message: err,
         data: null
       });

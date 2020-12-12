@@ -14,4 +14,6 @@ module.exports = function(app) {
 
   app.route('/categories/update')
   .post(category.updateCategory);
+
+  //app.route('/categories/image/:id').get(category.getImage);
 };

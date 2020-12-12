@@ -15,12 +15,17 @@ var app = express(),
   loadCategories=require('./models/categoryModel'),
   loadTopics=require('./models/topicModel'),
   loadLevels=require('./models/levelModel'),
+  loadAdminUsers=require('./models/adminUsersModel'),
+
   bodyParser = require('body-parser');
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 //mongoose.connect('mongodb://localhost/Tododb'); // Rohit Need to Change After some time
-mongoose.connect('mongodb://localhost/s2s_db');  //Gaurav
+mongoose.connect('mongodb://localhost/s2s_db',{
+  useNewUrlParser: true,
+  useUnifiedTopology:true
+});  //Gaurav
 
 
 app.all('/*', function(req, res, next) {
@@ -61,6 +66,7 @@ var userRoute =  require('./routes/userRoute');
 var categoryRoute=require('./routes/categoryRoute');
 var topicRoute=require('./routes/topicRoute');
 var levelRoute=require('./routes/levelRoute');
+var adminUserRoute=require('./routes/adminUsersRoute');
 
 //register the route
 videoRoute(app); 
@@ -70,6 +76,7 @@ userRoute(app);
 categoryRoute(app);
 topicRoute(app);
 levelRoute(app);
+adminUserRoute(app);
 
 var apiRoute = port; //+ "/api/v1/";
 app.listen(apiRoute);
