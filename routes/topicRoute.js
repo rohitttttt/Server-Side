@@ -14,4 +14,7 @@ module.exports = function(app) {
 
   app.route('/topics/update')
   .post(topic.updateTopic);
+
+  app.route('/topics/edit')
+  .post(topic.editTopic);
 };

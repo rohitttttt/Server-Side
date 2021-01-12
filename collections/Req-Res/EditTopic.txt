@@ -1,0 +1,56 @@
+
+localhost:3001/topics/edit
+
+{
+	"theme": "I Learn1",
+	"level": "Foundation1",
+	"category": "Health and Hygiene1",
+	"title": "Human Brain1",
+	"by": "gaurav"
+}
+
+{
+    "status": "0",
+    "message": "success",
+    "data": {
+        "topics": [
+            {
+                "_id": "5fd45ba125363527ec01bee8",
+                "question": [
+                    {
+                        "q1": "which is the anantomy for brain",
+                        "ch1": "brainatomy",
+                        "ch2": "mindanatomy",
+                        "ch3": "nuroanatomy",
+                        "ch4": "none of these",
+                        "ans": 3
+                    },
+                    {
+                        "q2": "Where brain is present in human",
+                        "ch1": "hand",
+                        "ch2": "head",
+                        "ch3": "leg",
+                        "ch4": "heart",
+                        "ans": 2
+                    }
+                ],
+                "isApproved": true,
+                "isActive": true,
+                "theme": "I Learn1",
+                "level": "Foundation1",
+                "category": "Health and Hygiene1",
+                "title": "Human Brain1",
+                "by": "gaurav",
+                "intropara": "The&nbsp;<strong>human brain</strong>&nbsp;is the central organ of the&nbsp;<strong>human</strong>&nbsp;nervous system, and with the spinal cord makes up the central nervous system. The&nbsp;<strong>brain</strong>&nbsp;consists of the cerebrum, the brainstem and the cerebellum. test.",
+                "discpara": "<p>The cerebrum is the largest part of the human brain. It is divided into two&nbsp;<a title=\"Cerebral hemisphere\" href=\"https://en.wikipedia.org/wiki/Cerebral_hemisphere\">cerebral hemispheres</a>. The&nbsp;<a title=\"Cerebral cortex\" href=\"https://en.wikipedia.org/wiki/Cerebral_cortex\">cerebral cortex</a>&nbsp;is an outer layer of&nbsp;<a title=\"Grey matter\" href=\"https://en.wikipedia.org/wiki/Grey_matter\">grey matter</a>, covering the core of&nbsp;<a title=\"White matter\" href=\"https://en.wikipedia.org/wiki/White_matter\">white matter</a>. The cortex is split into the&nbsp;<a title=\"Neocortex\" href=\"https://en.wikipedia.org/wiki/Neocortex\">neocortex</a>&nbsp;and the much smaller&nbsp;<a title=\"Allocortex\" href=\"https://en.wikipedia.org/wiki/Allocortex\">allocortex</a>. The neocortex is made up of six&nbsp;<a title=\"Cerebral cortex\" href=\"https://en.wikipedia.org/wiki/Cerebral_cortex#Layers_of_neocortex\">neuronal layers</a>, while the allocortex has three or four. test</p>",
+                "concpara": "<p>The study of the anatomy of the brain is <a title=\"Neuroanatomy\" href=\"https://en.wikipedia.org/wiki/Neuroanatomy\">neuroanatomy</a>, while the study of its function is <a title=\"Neuroscience\" href=\"https://en.wikipedia.org/wiki/Neuroscience\">neuroscience</a>. A number of techniques are used to study the brain. <a title=\"Biological specimen\" href=\"https://en.wikipedia.org/wiki/Biological_specimen\">Specimens</a> from other animals, which may be <a title=\"Histology\" href=\"https://en.wikipedia.org/wiki/Histology\">examined microscopically</a>, have traditionally provided much information. test</p>",
+                "videourl": "https://wwww.youtube1.com",
+                "mustread": "Must be converted to hyperlinks when displaying1",
+                "references": "reference1,reference2",
+                "created_by": "gaurav",
+                "updated_by": "",
+                "updated_date": "2020-04-04T18:30:00.000Z"
+            }
+        ]
+    }
+}
