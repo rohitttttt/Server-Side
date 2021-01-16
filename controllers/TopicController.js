@@ -105,7 +105,39 @@ exports.createTopic = async (req, res) => {
           {level: req.body.level},
           {category: req.body.category},
           {title: req.body.title},
-          {by: req.body.by}
+          {by: req.body.by},
+          {isActive: true}
+        ]
+      }
+    }]);
+    return topics;
+  }
+
+  exports.searchTopic = async (req,res) => {
+    try{
+      if(req.body.theme ==="" || req.body.level ==="" || req.body.category ==="")
+      res.send({status:"1", message: "Invalid Request!", data:null});
+      else{
+        var topics = await findTopicsByThemeLevelCategory(req);
+        if(topics.length > 0)
+          res.json({status:"0", message: "success", data: {topics}});
+        else
+          res.send({status:"1", message: "No Records Found!", data:null});
+      }
+    }
+    catch(e){
+      errorHandler.sendErrorResponse(e,res);
+    }
+  }
+
+  const findTopicsByThemeLevelCategory = async (req) => {
+    var topics = await Topics.aggregate([{
+      $match :{
+        $and : [
+          {theme: req.body.theme},
+          {level: req.body.level},
+          {category: req.body.category},
+          {isActive: true}
         ]
       }
     }]);
